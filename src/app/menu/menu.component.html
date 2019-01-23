@@ -1,0 +1,64 @@
+<style>
+
+  .menubox{
+    position: absolute;
+    /* height: 100vh;
+    width: 100vw; */
+    bottom: 0px;
+    right: 0px;
+  }
+
+  .menu {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: 7vh;
+    font-size: 7vh;
+  }
+
+/* This is all the stuff if we want custom images for the lists */
+
+  ul {
+list-style-type: none;
+}
+
+ul li:before {
+content: '';
+display: inline-block;
+
+/* The individual spacings for adjustments */
+height: 5vh;
+width: 5vh;
+background-size: 5vh;
+position: relative;
+top: .4vh;
+
+/* The image being used */
+background-image: url('../../assets/List/baseline_highlight_off_black_18dp.png');
+background-repeat: no-repeat;
+/* If you want to change the margins */
+margin-right: 5px; 
+
+
+}
+
+li:hover {
+  color: gray;
+}
+
+ 
+</style>
+
+
+
+
+<div class = 'menubox'>
+    <div class='menu'>
+        <ul>
+          <li routerLink="/about">About Me</li>
+          <li routerLink="/blog">Blog</li>
+          <li routerLink="/portfolio">Portfolio</li>
+          <li routerLink="/contact">Contact</li>
+        </ul>
+      </div>
+</div>

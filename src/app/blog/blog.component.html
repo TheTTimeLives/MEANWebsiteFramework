@@ -1,0 +1,66 @@
+<!-- A for loop goes over our array of blogs and binds there id's to a property in a routerLink so that we can route towards the correct page -->
+<style>
+    .blogbox {
+        /* Centering our content  */
+        /* Using a flexbox */
+        display: flex;
+        /* Stacking the items in the flex */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* margin: 2vh 30vw; */
+        margin: 5% 25%;
+    }
+
+    .title {
+        font-size: 8.5vh;
+        margin: 0 0;
+    }
+
+    .date {
+        font-size: 6vh;
+        margin: 0 0;
+    }
+
+    .body {
+        font-size: 4vh;
+        margin: 0 0;
+    }
+
+    .imgbox {
+        max-width: 80%;
+        height: auto;
+        max-height: 50%;
+        margin: 0 1vh;
+
+    }
+
+    .image {
+        max-width: 100%;
+        height: auto;
+        max-height: 100%;
+    }
+</style>
+
+
+<app-back-arrow></app-back-arrow>
+<li *ngFor="let blog of blogs">
+        <div class='blogbox'>
+                <div>
+                    <h2 [routerLink]="[blog.id]" class='title'>{{blog.title}}</h2>
+                    <!-- We can pipe the data to put it how we want it it should be great -->
+                    <h5 class='date'>{{blog.createdAt | date: 'mediumDate'}}</h5>
+                    <P class='body'>{{blog.message}}</P>
+                </div>
+            </div>
+    <!-- <a [routerLink]="[blog.id]">{{blog.title}}</a> -->
+</li>
+
+
+
+
+
+
+<!-- This will be where we put our blog posts and our property binding so that we can have custom routes like normal -->
+
+<!-- If you put something with '' in the array, it will become a route (RELATIVE TO WHERE YOU ARE), if you don't do that it will become another arguement -->

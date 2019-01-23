@@ -1,0 +1,35 @@
+<style>
+  .fit {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    /* position: absolute; */
+    bottom: 0px;
+    z-index: -3;
+  }
+
+  .imgbox {
+    /* We should be able to use this with any image as long as it is sufficiently large. It also keeps the image locked on the bottom of the screen.  */
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+  }
+</style>
+
+<div class='imgbox'>
+  <img class='fit' src='../../assets/BGImages/makesmaller.png'>
+  <app-title>
+      <!-- We use ng container instead of the div because it just removes an unecessary div remnant of the original process -->
+      <ng-container class="title">Taylor Melnik</ng-container>
+      <ng-container class="subheader">Owner of Melnikprod.</ng-container>
+      <ng-container class="comment">some unemployed person</ng-container>
+    </app-title>
+    <app-menu></app-menu>
+</div>
+
+
+<!-- The way to do it using property binding which is kinda weird since you have to make properties in a different component just to change text... -->
+<!-- The $event is just the generic arguement used for events in angular -->
+<!-- Remember, event emission is how you grab stuff in these front ende frameworks, it's the easiest way to read shit and go -->
+<!-- <app-title [title]="title" (change) = "onTitleChange($event)" ></app-title> -->
+

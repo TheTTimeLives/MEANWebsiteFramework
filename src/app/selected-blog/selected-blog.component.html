@@ -1,0 +1,69 @@
+<style>
+  .blogbox {
+    /* Centering our content  */
+
+    /* Using a flexbox */
+    display: flex;
+    /* Stacking the items in the flex */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin: 2vh 30vw; */
+    margin: 5% 25%;
+  }
+
+  .title {
+    font-size: 8.5vh;
+    margin: 0 0;
+  }
+
+  .date{
+    font-size: 6vh;
+    margin: 0 0;
+  }
+
+  .body{
+    font-size: 7vh;
+    margin: 0 0;
+  }
+
+  .imgbox{
+    /* max-width: 80%; */
+    height: auto;
+    max-height: 50%;
+    margin: 0 1vh;
+
+  }
+
+  .image {
+    max-width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin: 5vh 0;
+    width: 100%;
+    /* width: 40vw; */
+    /* margin: 5vh 5vw; */
+  }
+
+</style>
+
+<!-- <div class = 'imgbox'>
+    <div>
+      <h2 class = 'title'>TITLE HEADING</h2>
+      <h5 class = 'date'>Title description, Dec 7, 2017</h5>
+      <div>Image</div>
+      <p class = 'body' >Some text..</p>
+    </div>
+</div> -->
+
+<div class = 'blogbox'>
+    <div>
+      <h2 class = 'title'>{{blog[0].title}}</h2>
+      <!-- We can pipe the data to put it how we want it it should be great -->
+      <h5 class = 'date'>{{blog[0].createdAt | date: 'mediumDate'}}</h5>
+      <div class = 'imgbox'>
+          <img class = 'image' [src]='image'>
+      </div>     
+      <P class = 'body'>{{blog[0].message}}</P>
+    </div>
+</div>

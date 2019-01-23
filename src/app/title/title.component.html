@@ -1,0 +1,55 @@
+<style>
+  /* I wish I had a really clean way/easy way to understand of doing this */
+  .fit {
+    /* max-width: 100%;
+    height: auto;
+    max-height: 100%; */
+   
+    /* We should be able to use this with any image as long as it is sufficiently large. It also keeps the image locked on the bottom of the screen.  */
+    /* width: 100vw;
+    height: 100vh; */
+  
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 5vh;
+  }
+
+  h1 {
+    font-size: 8vh;
+    margin: 0
+  }
+
+  h2 {
+    font-size: 5vh;
+    margin: 0
+  }
+
+  h3 {
+    font-size: 3vh;
+    margin: 0
+  }
+</style>
+
+
+
+
+<!-- Using property binding which is kind of weird for this and too much work for such a small thing -->
+<!-- <div class='fit'>
+  <h1>{{title}}</h1>
+  <h2>Full Stack Developer</h2>
+  <h3>...and other odds and ends</h3>
+</div> -->
+
+<!-- Using the ng content directive to make this much simpler -->
+<div class='fit'>
+  <h1>
+    <ng-content select = '.title'></ng-content>
+  </h1>
+  <h2>
+    <ng-content select = '.subheader'></ng-content>
+  </h2>
+  <h3>
+    <ng-content select = '.comment'></ng-content>
+  </h3>
+</div>

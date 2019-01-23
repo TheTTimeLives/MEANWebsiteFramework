@@ -1,0 +1,109 @@
+<style>
+  .imgbox {
+    /* Centering our content  */
+    /* Using a flexbox */
+    display: flex;
+    /* Stacking the items in the flex */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    width: 500px;
+  }
+
+  .fit {
+    height: 50vh;
+  }
+
+
+  .container {
+    /* margin-top: 20vh; */
+    max-width: 50vw;
+  }
+
+  .form {
+    height: 8vh;
+    width: 100%;
+  }
+
+  .formBody {
+    height: 20vh;
+    width: 100%;
+  }
+
+  .textFormatting {
+    margin: 2vh 30vw;
+    /* This has to be adjusted depending on how much text there is */
+    font-size: 3vh;
+  }
+
+  h1 {
+    font-size: 4vw;
+    color: white;
+    text-align: center;
+
+  }
+
+  .border {
+    border-style: solid;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    border-color: white;
+    border-width: 4px;
+    padding-bottom: 5vh;
+    margin-top: 5vh;
+  }
+
+  button {
+    margin-top: 2vh;
+  }
+</style>
+
+<!-- <p>
+  contact works!
+</p> -->
+<app-back-arrow></app-back-arrow>
+<section class="section imgbox">
+  <div class = 'border'>
+    <h1>CONTACT ME HERE</h1>
+    <div class="container">
+
+      <!-- form goes here -->
+      <form (ngSubmit)="sendEmail()">
+
+        <!-- name -->
+        <div class="field">
+          <mz-input-container>
+            <input mz-input type="text" name="name" class="input form" placeholder="Your Name" [(ngModel)]='name'>
+          </mz-input-container>
+        </div>
+
+        <!-- company -->
+        <div class="field">
+          <input mz-input type="email" name="email" class="input form " placeholder="Your Company" [(ngModel)]='company'>
+        </div>
+
+        <!-- phone -->
+        <div class="field">
+          <input mz-input type="email" name="email" class="input form " placeholder="Your Phone" [(ngModel)]='phone'>
+        </div>
+
+        <!-- email -->
+        <div class="field">
+          <input mz-input type="email" name="email" class="input form " placeholder="Your Email" [(ngModel)]='email'>
+        </div>
+
+        <!-- message -->
+        <div class="field">
+          <textarea class="textarea formBody" name="message" placeholder="What's on your mind?" [(ngModel)]='message'></textarea>
+        </div>
+
+        <button mz-button type="submit" class="button">Submit</button>
+
+      </form>
+    </div>
+  </div>
+
+</section>
